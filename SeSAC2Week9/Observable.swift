@@ -18,6 +18,7 @@ class Observable<T> { // 양방향 바인딩 - didSet처럼 한쪽에서만 바�
     func bind(_ closure: @escaping (T) -> Void) {
         closure(value)
         listener = closure
+        print(#function)
     }
  
 }

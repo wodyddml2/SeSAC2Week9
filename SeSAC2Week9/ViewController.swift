@@ -11,7 +11,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var lottoLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-    var list: Person?
+    private var viewModel = PersonViewModel()
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,13 +32,10 @@ class ViewController: UIViewController {
             
         }
         
-        PersonAPIManager.requestPerson(query: "mac") { person, error in
-            guard let person = person else {
-                return
-            }
-            self.list = person
+        viewModel.fetchPerson(query: "mac")
+        viewModel.list.bind { person in
+            print("viewcontroller bind")
             self.tableView.reloadData()
-            dump(person)
         }
     }
 
@@ -45,13 +44,13 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list?.results.count ?? 0
+        return viewModel.numberOfRowsInSection
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
-        cell.textLabel?.text = list?.results[indexPath.row].name
-        cell.detailTextLabel?.text = list?.results[indexPath.row].knownForDepartment
+        cell.textLabel?.text = viewModel.cellForRowAt(at: indexPath).name
+        cell.detailTextLabel?.text = viewModel.cellForRowAt(at: indexPath).knownForDepartment
         return cell
     }
     
