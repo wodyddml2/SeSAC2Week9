@@ -88,7 +88,7 @@ class GCDViewController: UIViewController {
             DispatchQueue.global().async {
                 print(i, terminator: " ")
             }
-            
+
         }
         for i in 101...200 {
             print(i, terminator: " ")

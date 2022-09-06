@@ -9,7 +9,6 @@ import Foundation
 
 class PersonViewModel {
     var list: Observable<Person> = Observable(Person(page: 0, totalPages: 0, totalResults: 0, results: []))
-    
     var numberOfRowsInSection: Int {
         return list.value.results.count
     }

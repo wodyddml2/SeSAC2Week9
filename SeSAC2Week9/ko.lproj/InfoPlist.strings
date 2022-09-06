@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  SeSAC2Week9
+
+  Created by J on 2022/09/06.
+  
+*/
+"CFBundleDisplayName" = "JY 다이어리";
+"NSLocationWhenInUseUsageDescription" = "위치 권한을 설정해주세요.";

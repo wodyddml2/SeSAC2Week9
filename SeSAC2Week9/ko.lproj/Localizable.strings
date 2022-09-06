@@ -1,0 +1,24 @@
+/* 
+  Localizable.strings
+  SeSAC2Week9
+
+  Created by J on 2022/09/06.
+  
+*/
+
+"navigation_title" = "나의 다이어리";
+
+"search_placeholder" = "영화를 검색해보세요";
+
+"main_age_placeholder" = "나이를 입력해보세요";
+
+"common_cancel" = "취소";
+
+"introduce" = "저의 닉네임은 %@ 입니다.";
+
+"number_test" = "저는 %lld살입니다.";
+
+/*
+ 리뷰 남기기 -> 앱 내에서의 리뷰 얼럿 : 1년에 한 디바이스 당 3회 // 무작정 띄우면 안좋다 - SKStoreReviewController, StroeKit
+ 문의 남기기-> 메일로 남기며 언제나 남길 수 있음 -> 
+ */
